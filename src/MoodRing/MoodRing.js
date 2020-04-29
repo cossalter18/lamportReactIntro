@@ -1,4 +1,5 @@
 import React from 'react';
+import MoodList from '../MoodList/MoodList'
 
 class MoodRing extends React.Component{
     // lets us share info throughout the Component
@@ -46,7 +47,8 @@ class MoodRing extends React.Component{
                 <ul>
                     { this.state.savedMoods.map( ( item )=> <li key={item.mood}>{ item.mood }: { item.color }</li> ) }
                 </ul>
-                <p>{ JSON.stringify( this.state ) }</p>
+                {/* create the prop */}
+                <MoodList listOfMoods = { this.state.savedMoods}/> 
             </div>
         ); //end return JSX
     } // end render
